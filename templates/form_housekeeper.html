@@ -5,8 +5,13 @@
     <title>Title</title>
 </head>
 <body>
+    <form method="post" enctype="multipart/form-data">
+        <!-- No Django, precisa identificar os forms com tokens -->
+        {% csrf_token %}
 
-    {{ form_housekeeper.as_p }}
-
+        <!-- Geração automática do form com o Django -->
+        {{ form_housekeeper.as_p }}
+        <button type="submit">Cadastrar</button>
+    </form>
 </body>
 </html>

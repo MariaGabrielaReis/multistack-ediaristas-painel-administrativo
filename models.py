@@ -10,7 +10,7 @@ class Housekeeper(models.Model):
     address_number = models.IntegerField(null=False, blank=False)
     address_district = models.CharField(max_length=30, null=False, blank=False)
     address_complement = models.CharField(max_length=100, null=False, blank=False)
-    address_cep = models.CharField(max_length=30, null=False, blank=False)
+    address_cep = models.CharField(max_length=8, null=False, blank=False)
     address_state = models.CharField(max_length=2, null=False, blank=False)
     ibge_code = models.IntegerField(null=False, blank=False)
     user_photo = models.ImageField(null=False)
