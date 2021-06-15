@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import housekeeper_form
-
+from .models import Housekeeper
 
 def register_housekeeper(request):
     if request.method == 'POST':
@@ -8,7 +8,13 @@ def register_housekeeper(request):
         form_housekeeper = housekeeper_form.HousekeeperForm(request.POST, request.FILES)
         if form_housekeeper.is_valid():
             form_housekeeper.save()
+            return redirect('list_housekeepers')
     else:
         # se não for para cadastrar, só envia o formulário para ser preenchido
         form_housekeeper = housekeeper_form.HousekeeperForm()
     return render(request, 'form_housekeeper.html', {'form_housekeeper': form_housekeeper})
+
+
+def list_housekeepers(request):
+    housekeepers = Housekeeper.objects.all()
+    return render(request, 'housekeepers_list.html', {'housekeepers': housekeepers})
