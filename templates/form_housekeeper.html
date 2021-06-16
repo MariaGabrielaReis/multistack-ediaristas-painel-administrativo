@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <form method="post" enctype="multipart/form-data">
@@ -6,7 +7,7 @@
         {% csrf_token %}
 
         <!-- Geração automática do form com o Django -->
-        {{ form_housekeeper.as_p }}
+        {{ form_housekeeper|crispy }}
         <button type="submit">Cadastrar</button>
     </form>
 {% endblock content %}
