@@ -16,9 +16,9 @@
       {% for housekeeper in housekeepers %}
         <tr>
           <td>{{housekeeper.id}}</td>
-          <td>{{housekeeper.full_name}}</td>
+          <td>{{housekeeper.nome_completo}}</td>
           <td>{{housekeeper.email}}</td>
-          <td>{{housekeeper.address_cep | cep}}</td>
+          <td>{{housekeeper.cep | cep}}</td>
           <td>
             <a href="{% url 'edit_housekeeper' housekeeper.id %}">Editar</a>
             <a href="{% url 'remove_housekeeper' housekeeper.id %}">Remover</a>
