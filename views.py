@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import housekeeper_form
 from .models import Housekeeper
 
+
 def register_housekeeper(request):
     if request.method == 'POST':
         # se a requisição for para envio de dados, ele vê se a resposta do form é valida e depois salva os dados
@@ -23,18 +24,22 @@ def list_housekeepers(request):
 
 def edit_housekeeper(request, housekeeper_id):
     # manipula apenas a diarista com determinado id
-    housekeeper = Housekeeper.objects.get(id = housekeeper_id)
-    # cria um formulário preenchido com os dados da diarista
-    form_housekeeper = housekeeper_form.HousekeeperForm(request.POST or None, instance=housekeeper)
-    if form_housekeeper.is_valid():
-        # se a resposta for válida, cadastra os dados e mostra a lista novamente
-        form_housekeeper.save()
-        return redirect('list_housekeepers')
+    housekeeper = Housekeeper.objects.get(id=housekeeper_id)
+
+    if request.method == 'POST':
+        # pega os dados da diarista (e a foto) e verifica se o formulário é válido para salvar
+        form_housekeeper = housekeeper_form.HousekeeperForm(request.POST or None, request.FILES, instance=housekeeper)
+        if form_housekeeper.is_valid():
+            form_housekeeper.save()
+            return redirect('list_housekeepers')
+    else:
+        # cria um formulário preenchido com os dados da diarista
+        form_housekeeper = housekeeper_form.HousekeeperForm(instance=housekeeper)
     return render(request, 'form_housekeeper.html', {'form_housekeeper': form_housekeeper})
 
 
 def remove_housekeeper(request, housekeeper_id):
-    #exclui a diarista com determinado id
-    housekeeper = Housekeeper.objects.get(id = housekeeper_id)
+    # exclui a diarista com determinado id
+    housekeeper = Housekeeper.objects.get(id=housekeeper_id)
     housekeeper.delete()
     return redirect('list_housekeepers')
