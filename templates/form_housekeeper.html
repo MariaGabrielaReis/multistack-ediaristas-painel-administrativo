@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <form method="post" enctype="multipart/form-data">
         <!-- No Django, precisa identificar os forms com tokens -->
         {% csrf_token %}
@@ -13,5 +9,4 @@
         {{ form_housekeeper.as_p }}
         <button type="submit">Cadastrar</button>
     </form>
-</body>
-</html>
+{% endblock content %}
