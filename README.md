@@ -42,7 +42,6 @@ Abaixo é possível encontrar uma demonstração das telas e funcionalidades do 
 
 <p  align="center">
   <img
-    width="280px"
     src=".github/demo-painel.gif"
   />
  </p>
