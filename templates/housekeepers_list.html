@@ -20,7 +20,7 @@
           <td>{{housekeeper.address_cep}}</td>
           <td>
             <a href="{% url 'edit_housekeeper' housekeeper.id %}">Editar</a>
-            <a href="#">Remover</a>
+            <a href="{% url 'remove_housekeeper' housekeeper.id %}">Remover</a>
           </td>
         </tr>
       {% endfor %}
