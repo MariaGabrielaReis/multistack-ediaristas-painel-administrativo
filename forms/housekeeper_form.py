@@ -12,7 +12,7 @@ class HousekeeperForm(forms.ModelForm):
 
     class Meta:
         model = Housekeeper
-        exclude = ('codigo_ibge', 'logradouro', 'bairro', 'estado', )
+        exclude = ('codigo_ibge', 'logradouro', 'bairro', 'cidade', 'estado', )
 
     def clean_cpf(self):
         cpf = self.cleaned_data['cpf']
@@ -42,6 +42,7 @@ class HousekeeperForm(forms.ModelForm):
         instance.codigo_ibge = city_api['ibge']
         instance.logradouro = city_api['logradouro']
         instance.bairro = city_api['bairro']
+        instance.cidade = city_api['localidade']
         instance.estado = city_api['uf']
         instance.save()
         return instance
