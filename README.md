@@ -18,20 +18,19 @@
 O evento "Multi-stack", realizado em junho de 2021, foi promovido pela Treina Web e incluiu a criação de uma aplicação chamada "E-Diaristas", 
 que tinha o objetivo de ser uma ferramenta para busca de profissionais especializados em serviços domésticos, baseando a pesquisa no CEP do contratante 
 e mostrando os profissionais que estivessem disponíveis para a região, contando também com avaliações dos clientes, formando uma reputação de até 5 estrelas 
-para cada contratado. Esta é a aplicação administrativa, responsável pelo cadastro e exclusão das diaristas.
+para cada contratado. Esta é a aplicação administrativa, responsável pelo cadastro, edição e exclusão das diaristas.
 
 <span id="tecs">
 
 ### 🛠️ Tecnologias
 
-As seguintes tecnologias, ferramentas, bibliotecas e pacotes foram utilizadas neste projeto:
+As seguintes tecnologias e  ferramentas foram utilizadas neste projeto:
 
 <p> 
   <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/></a>
   <a href="https://getbootstrap.com/"><img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/></a>
    <a href="https://www.sqlite.org/index.html"><img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white"/></a>
   <a href="https://www.djangoproject.com/"><img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white"/></a>
-  <img src="https://img.shields.io/badge/Pillow%20|%20Crispy%20|%20Easy--Mask%20|%20jQuery%20Mask-092E20?style=for-the-badge&logo=django&logoColor=white&labelColor=green"/>
   <a href="https://www.jetbrains.com/pt-br/pycharm/"><img src="https://img.shields.io/badge/pycharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=gray&labelColor=green"/></a>
 </p>
   
